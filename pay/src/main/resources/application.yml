@@ -6,21 +6,20 @@ server:
 spring:
   application:
     name: pay
+    consumingSeconds: 10
   profiles:
     active: redis
   datasource:
-    url: jdbc:mysql://localhost:3306/myweb?zeroDateTimeBehavior=convertToNull&characterEncoding=utf8&useSSL=true
+    url: jdbc:mysql://localhost:3306/distributed?zeroDateTimeBehavior=convertToNull&characterEncoding=utf8&useSSL=true&serverTimezone=GMT
     username: root
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
-  rocket-mq:
-      namesrv-addr: 192.168.133.132:9876
-      consume-thread-min: 1
-      consume-thread-max: 10
+
 
 mybatis:
-  mapperLocations: classpath:mapper/*/*.xml
+  mapper-locations: classpath:mybatis/mapper/**/*Mapper.xml
+  config-location: classpath:mybatis/mybatis-config.xml
 
 logging:
   level:
-    com.neusoft.integral: DEBUG
+    com.neusoft.pay: DEBUG

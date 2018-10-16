@@ -1,0 +1,54 @@
+DROP TABLE IF EXISTS `dis_transfer`;
+CREATE TABLE `dis_transfer` (
+  `id` varchar(50) NOT NULL DEFAULT '' COMMENT '主键ID',
+  `editor` varchar(100) DEFAULT NULL COMMENT '修改者',
+  `creater` varchar(100) DEFAULT NULL COMMENT '创建者',
+  `edit_time` datetime DEFAULT NULL COMMENT '最后修改时间',
+  `create_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '创建时间',
+  `order_id` varchar(50) NOT NULL DEFAULT '' COMMENT '订单ID',
+  `status` varchar(20) NOT NULL DEFAULT '' COMMENT '状态',
+  `remark` varchar(200) DEFAULT NULL COMMENT '备注',
+  `field1` varchar(200) DEFAULT NULL COMMENT '扩展字段1',
+  `field2` varchar(200) DEFAULT NULL COMMENT '扩展字段2',
+  `field3` varchar(200) DEFAULT NULL COMMENT '扩展字段3',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `dis_reliable`;
+CREATE TABLE `dis_reliable` (
+  `id` varchar(50) NOT NULL DEFAULT '' COMMENT '主键ID',
+  `editor` varchar(100) DEFAULT NULL COMMENT '修改者',
+  `creater` varchar(100) DEFAULT NULL COMMENT '创建者',
+  `edit_time` datetime DEFAULT NULL COMMENT '最后修改时间',
+  `create_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '创建时间',
+  `order_id` varchar(50) NOT NULL DEFAULT '' COMMENT '订单ID',
+  `order_info`longtext NOT NULL COMMENT '订单内容(json)',
+  `query_order_times` smallint(5) NOT NULL DEFAULT '0' COMMENT '查询订单次数',
+  `message_send_times` smallint(5) NOT NULL DEFAULT '0' COMMENT '消息重发次数',
+  `order_status` varchar(2) NOT NULL DEFAULT '' COMMENT '转账状态',
+  `integral_status` varchar(2) NOT NULL DEFAULT '' COMMENT '积分状态',
+  `remark` varchar(200) DEFAULT NULL COMMENT '备注',
+  `field1` varchar(200) DEFAULT NULL COMMENT '扩展字段1',
+  `field2` varchar(200) DEFAULT NULL COMMENT '扩展字段2',
+  `field3` varchar(200) DEFAULT NULL COMMENT '扩展字段3',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+DROP TABLE IF EXISTS `dis_integral`;
+CREATE TABLE `dis_integral` (
+  `id` varchar(50) NOT NULL DEFAULT '' COMMENT '主键ID',
+  `editor` varchar(100) DEFAULT NULL COMMENT '修改者',
+  `creater` varchar(100) DEFAULT NULL COMMENT '创建者',
+  `edit_time` datetime DEFAULT NULL COMMENT '最后修改时间',
+  `create_time` datetime NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '创建时间',
+  `order_id` varchar(50) NOT NULL DEFAULT '' COMMENT '消息ID',
+  `status` varchar(20) NOT NULL DEFAULT '' COMMENT '状态',
+  `remark` varchar(200) DEFAULT NULL COMMENT '备注',
+  `field1` varchar(200) DEFAULT NULL COMMENT '扩展字段1',
+  `field2` varchar(200) DEFAULT NULL COMMENT '扩展字段2',
+  `field3` varchar(200) DEFAULT NULL COMMENT '扩展字段3',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+ALTER TABLE dis_integral DROP INDEX uniqueOrderId;
+CREATE UNIQUE INDEX uniqueOrderId ON dis_integral(order_id);

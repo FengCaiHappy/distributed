@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/common.iml" filepath="$PROJECT_DIR$/.idea/modules/common.iml" group="common" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/common/common_main.iml" filepath="$PROJECT_DIR$/.idea/modules/common/common_main.iml" group="common" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/common/common_test.iml" filepath="$PROJECT_DIR$/.idea/modules/common/common_test.iml" group="common" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/distributed.iml" filepath="$PROJECT_DIR$/.idea/modules/distributed.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/distributed_main.iml" filepath="$PROJECT_DIR$/.idea/modules/distributed_main.iml" group="distributed" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/distributed_test.iml" filepath="$PROJECT_DIR$/.idea/modules/distributed_test.iml" group="distributed" />

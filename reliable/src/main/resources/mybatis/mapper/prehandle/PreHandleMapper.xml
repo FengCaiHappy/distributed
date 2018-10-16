@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.neusoft.reliable.base.prehandle.dao.PreHandleDao">
+
+    <insert id="savePreHandleInfo" parameterType="com.neusoft.reliable.base.prehandle.entity.ReliableEntity">
+        INSERT INTO
+          dis_reliable
+        (
+          id,creater,create_time,order_id,order_info,order_status
+        )
+        VALUES
+        (
+          #{id},#{creater},#{createTime},#{orderId},#{orderInfo},#{orderStatus}
+        )
+    </insert>
+</mapper>
