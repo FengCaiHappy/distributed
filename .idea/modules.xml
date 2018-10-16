@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/distributed.iml" filepath="$PROJECT_DIR$/.idea/modules/distributed.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/distributed_main.iml" filepath="$PROJECT_DIR$/.idea/modules/distributed_main.iml" group="distributed" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/distributed_test.iml" filepath="$PROJECT_DIR$/.idea/modules/distributed_test.iml" group="distributed" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/integral.iml" filepath="$PROJECT_DIR$/.idea/modules/integral.iml" group="integral" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/integral/integral_main.iml" filepath="$PROJECT_DIR$/.idea/modules/integral/integral_main.iml" group="integral" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/integral/integral_test.iml" filepath="$PROJECT_DIR$/.idea/modules/integral/integral_test.iml" group="integral" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/pay.iml" filepath="$PROJECT_DIR$/.idea/modules/pay.iml" group="pay" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/pay/pay_main.iml" filepath="$PROJECT_DIR$/.idea/modules/pay/pay_main.iml" group="pay" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/pay/pay_test.iml" filepath="$PROJECT_DIR$/.idea/modules/pay/pay_test.iml" group="pay" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/reliable.iml" filepath="$PROJECT_DIR$/.idea/modules/reliable.iml" group="reliable" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/reliable/reliable_main.iml" filepath="$PROJECT_DIR$/.idea/modules/reliable/reliable_main.iml" group="reliable" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/reliable/reliable_test.iml" filepath="$PROJECT_DIR$/.idea/modules/reliable/reliable_test.iml" group="reliable" />
+    </modules>
+  </component>
+</project>

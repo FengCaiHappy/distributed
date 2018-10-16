@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="distributed_main" target="1.8" />
+      <module name="distributed_test" target="1.8" />
+      <module name="integral_main" target="1.8" />
+      <module name="integral_test" target="1.8" />
+      <module name="pay_main" target="1.8" />
+      <module name="pay_test" target="1.8" />
+      <module name="reliable_main" target="1.8" />
+      <module name="reliable_test" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

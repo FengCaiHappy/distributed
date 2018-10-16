@@ -1,0 +1,24 @@
+server:
+  servlet:
+    context-path: /reliable
+  port: 8083
+  
+spring:
+  profiles:
+    active: redis
+  datasource:
+    url: jdbc:mysql://localhost:3306/myweb?zeroDateTimeBehavior=convertToNull&characterEncoding=utf8&useSSL=true
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  rocket-mq:
+        namesrv-addr: 192.168.133.132:9876
+        consume-thread-min: 1
+        consume-thread-max: 10
+
+mybatis:
+  mapperLocations: classpath:mapper/*/*.xml
+
+logging:
+  level:
+    com.neusoft.integral: DEBUG
