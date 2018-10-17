@@ -43,7 +43,11 @@ public class DoneHandleService {
         entity.setEditTime(new Date());
         int num = doneHandleDao.saveDoneHandleInfo(entity);
         if(num == 1){
-            sendMQMessage.sendMsg(param);
+            try{
+                sendMQMessage.sendMsg(param);
+            }catch (Exception e){
+                logger.info("可靠性服务系统》》》：消息队列发送失败");
+            }
         }
         logger.info("可靠性服务系统》》》：转账已完成处理结束");
         return "success";
