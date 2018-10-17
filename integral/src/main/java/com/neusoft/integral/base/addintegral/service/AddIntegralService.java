@@ -1,10 +1,13 @@
 package com.neusoft.integral.base.addintegral.service;
 
+import com.neusoft.common.context.DistributedContext;
 import com.neusoft.common.entity.OrderInfo;
 import com.neusoft.common.uti.HttpUtil;
 import com.neusoft.common.uti.Utils;
 import com.neusoft.integral.base.addintegral.dao.AddIntegralDao;
 import com.neusoft.integral.base.addintegral.entity.IntegralEntity;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -19,6 +22,11 @@ import java.util.Map;
 @Service
 public class AddIntegralService {
 
+    private static final Logger logger = LoggerFactory.getLogger(AddIntegralService.class);
+
+    @Value("${httpuri.receive-msg}")
+    private String receiveMsgUrl;
+
     @Value("${spring.application.consumingSeconds}")
     private Integer consumingSeconds;
 
@@ -26,6 +34,7 @@ public class AddIntegralService {
     private AddIntegralDao addIntegralDao;
 
     public void addIntegral(OrderInfo info){
+        logger.info("积分系统》》》：增加积分开始");
         IntegralEntity entity = new IntegralEntity();
         String id = Utils.getUUID();
         entity.setId(id);
@@ -38,6 +47,7 @@ public class AddIntegralService {
             return;
         }
 
+        //模拟耗时操作
         try {
             Thread.sleep(consumingSeconds*1000);
         } catch (InterruptedException e) {
@@ -47,9 +57,9 @@ public class AddIntegralService {
         //推送处理结果
         Map<String, Object> map = new HashMap<>();
         map.put("orderId", info.getOrderId());
-        map.put("status", "1");
+        map.put("status", DistributedContext.SUCCESS);
         map.put("orderInfo", "abc123");
-        //TODO
-        String res = HttpUtil.doPost("http://localhost:8083/reliable/receiveMsg", map);
+        String res = HttpUtil.doPost(receiveMsgUrl, map);
+        logger.info("积分系统》》》：增加积分结束");
     }
 }

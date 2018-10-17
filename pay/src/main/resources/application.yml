@@ -23,3 +23,7 @@ mybatis:
 logging:
   level:
     com.neusoft.pay: DEBUG
+
+httpuri:
+  pre-handle: http://localhost:8083/reliable/preHandle
+  done-handle: http://localhost:8083/reliable/doneHandle

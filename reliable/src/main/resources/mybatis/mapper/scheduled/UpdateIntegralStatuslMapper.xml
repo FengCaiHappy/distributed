@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.neusoft.reliable.scheduled.dao.UpdateIntegralStatusDao">
+
+    <update id="updateIntegralStatus">
+        update
+          dis_reliable
+        SET
+          integral_status = '3'
+        WHERE
+          integral_status = '2'
+        AND
+          message_send_times = 5
+    </update>
+</mapper>

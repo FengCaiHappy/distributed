@@ -26,3 +26,6 @@ mybatis:
 logging:
   level:
     com.neusoft.integral: DEBUG
+
+httpuri:
+  receive-msg: http://localhost:8083/reliable/receiveMsg

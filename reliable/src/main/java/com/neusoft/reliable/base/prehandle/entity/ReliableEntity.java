@@ -11,7 +11,7 @@ public class ReliableEntity {
     private String orderId;
     private String orderInfo;
     private String queryOrderTimes;
-    private String messageSendTimes;
+    private Integer messageSendTimes;
     //转账状态 1：成功  2：处理中  3：失败
     private String orderStatus;
     //积分状态 1：成功  2：处理中  3：失败
@@ -85,11 +85,11 @@ public class ReliableEntity {
         this.queryOrderTimes = queryOrderTimes;
     }
 
-    public String getMessageSendTimes() {
+    public Integer getMessageSendTimes() {
         return messageSendTimes;
     }
 
-    public void setMessageSendTimes(String messageSendTimes) {
+    public void setMessageSendTimes(Integer messageSendTimes) {
         this.messageSendTimes = messageSendTimes;
     }
 

@@ -13,13 +13,13 @@ import java.util.concurrent.Executor;
 public class AsyncConfig {
 
     @Value("${spring.application.executor-core-pool-size}")
-    private int corePoolSize = 10;
+    private int corePoolSize;
 
     @Value("${spring.application.executor-max-pool-size}")
-    private int maxPoolSize = 200;
+    private int maxPoolSize;
 
     @Value("${spring.application.executor-queue-capacity}")
-    private int queueCapacity = 10;
+    private int queueCapacity;
 
     @Bean
     public Executor taskExecutor() {

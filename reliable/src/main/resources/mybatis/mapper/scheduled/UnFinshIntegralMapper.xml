@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.neusoft.reliable.scheduled.dao.UnFinshIntegralDao">
+
+    <select id="queryUnFinshIntegral" parameterType="com.neusoft.reliable.base.prehandle.entity.ReliableEntity"
+        resultType="com.neusoft.common.entity.OrderInfo">
+        SELECT
+          order_id,
+          order_info,
+          order_status as status
+        FROM
+          dis_reliable
+        WHERE
+          integral_status = #{integralStatus}
+        AND
+          message_send_times &lt; #{messageSendTimes}
+    </select>
+
+    <update id="updateIntegralStatus" parameterType="com.neusoft.common.entity.OrderInfo">
+        <foreach collection="list" item="item" index="index" open="" close="" separator=";">
+            update
+              dis_reliable
+            SET
+              message_send_times = message_send_times + 1
+            WHERE
+              order_id = #{item.orderId}
+         </foreach>
+    </update>
+</mapper>

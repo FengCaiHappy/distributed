@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.neusoft.reliable.base.queryfailintegral.dao.QueryFailIntegralDao">
+
+    <select id="queryFailIntegral" parameterType="com.neusoft.reliable.base.prehandle.entity.ReliableEntity"
+        resultType="com.neusoft.reliable.base.prehandle.entity.ReliableEntity">
+        SELECT
+          *
+        FROM
+          dis_reliable
+        WHERE
+          integral_status = #{integralStatus}
+    </select>
+</mapper>

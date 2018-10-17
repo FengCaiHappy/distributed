@@ -9,6 +9,7 @@ spring:
     executor-core-pool-size: 10
     executor-max-pool-size: 200
     executor-queue-capacity: 10
+    send-times: 5
   profiles:
     active: redis
   datasource:
@@ -28,3 +29,6 @@ mybatis:
 logging:
   level:
     com.neusoft.relibale: DEBUG
+
+httpuri:
+  query-info: http://localhost:8082/pay/queryInfo

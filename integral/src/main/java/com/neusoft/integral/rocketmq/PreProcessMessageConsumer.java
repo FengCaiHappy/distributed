@@ -1,5 +1,6 @@
 package com.neusoft.integral.rocketmq;
 
+import com.neusoft.common.context.DistributedContext;
 import org.apache.rocketmq.client.consumer.DefaultMQPushConsumer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -37,7 +38,7 @@ public class PreProcessMessageConsumer implements InitializingBean, DisposableBe
         try {
             consumer = new DefaultMQPushConsumer(groupName);
             consumer.setNamesrvAddr(namesrvAddr);
-            consumer.subscribe("TopicTest","tag");
+            consumer.subscribe(DistributedContext.TOPIC, DistributedContext.TAG);
             consumer.registerMessageListener(orderMessageListener);
             consumer.setConsumeThreadMax(consumeThreadMax);
             consumer.setConsumeThreadMin(consumeThreadMin);
