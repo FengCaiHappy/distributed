@@ -6,10 +6,13 @@ server:
 spring:
   application:
     name: reliable
+    executor-core-pool-size: 10
+    executor-max-pool-size: 200
+    executor-queue-capacity: 10
   profiles:
     active: redis
   datasource:
-    url: jdbc:mysql://localhost:3306/distributed?zeroDateTimeBehavior=convertToNull&characterEncoding=utf8&useSSL=true&serverTimezone=GMT
+    url: jdbc:mysql://localhost:3306/distributed?zeroDateTimeBehavior=convertToNull&characterEncoding=utf8&useSSL=true&serverTimezone=GMT&allowMultiQueries=true
     username: root
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver

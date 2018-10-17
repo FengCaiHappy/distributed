@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.neusoft.reliable.scheduled.dao.UnFinshTransferDao">
+
+    <select id="queryUnFinshTransfer" parameterType="com.neusoft.reliable.base.prehandle.entity.ReliableEntity"
+        resultType="com.neusoft.reliable.base.prehandle.entity.ReliableEntity">
+        SELECT
+          order_id
+        FROM
+          dis_reliable
+        WHERE
+          order_status = #{orderStatus}
+        AND
+          create_time &gt;= #{createTime}
+    </select>
+
+    <update id="updateTransferStatus" parameterType="com.neusoft.common.entity.OrderInfo">
+        <foreach collection="list" item="item" index="index" open="" close="" separator=";">
+            update
+              dis_reliable
+            SET
+              order_status = #{item.status}
+            WHERE
+              order_id = #{item.orderId}
+         </foreach>
+    </update>
+</mapper>

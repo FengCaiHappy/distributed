@@ -33,6 +33,7 @@ public class DoneHandleService {
         entity.setOrderInfo(param.getOrderInfo());
         entity.setOrderStatus(param.getStatus());
         entity.setEditor("1");
+        entity.setIntegralStatus("2");
         entity.setEditTime(new Date());
         doneHandleDao.saveDoneHandleInfo(entity);
         sendMQMessage.sendMsg(param);
