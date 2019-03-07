@@ -1,3 +1,7 @@
+plugins {
+    id "org.sonarqube" version "2.6"
+}
+
 group 'demo'
 version '1.0-SNAPSHOT'
 
